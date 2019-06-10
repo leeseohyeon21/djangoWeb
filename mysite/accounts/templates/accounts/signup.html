@@ -1,0 +1,28 @@
+{% extends 'movie/base.html' %}
+    
+{% block title %}회원가입{% endblock %}
+
+
+{% block content %}
+    <h2 style="text-align: center;">회원가입</h2>
+    <form method="POST" action="{% url 'signup'%}">
+    {% csrf_token %}
+        <table class="cancel" style="border: none;">
+            <tr class="cancel-list">
+                <td class="cancel-item">아이디</td>
+                <td class="cancel-item"><input name="username" type="text"></td>
+            </tr>
+            <tr class="cancel-list">
+                <td class="cancel-item">비밀번호</td>
+                <td class="cancel-item"><input name="password1" type="password"></td>
+            </tr>
+            <tr class="cancel-list">
+                <td class="cancel-item">비밀번호 확인</td>
+                <td class="cancel-item"><input name="password2" type="password"></td>
+            </tr>
+            <tr class="cancel-list">
+                <td colspan="2"><input type="submit" value="회원가입" style="text-align: center;"></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

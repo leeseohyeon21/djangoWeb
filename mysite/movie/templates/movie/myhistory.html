@@ -1,0 +1,31 @@
+{% extends 'movie/base.html' %}
+
+{% block title %}예매내역{% endblock %}
+
+{% block content %}
+    <div class="process"><strong>{{ user_id }}님의 예매 내역</strong></div><br>
+    {% for reservation in reservations %}
+        <table class="cancel">
+            <tr class="cancel-list">
+                <th class="cancel-item">예매 번호</th>
+                <td class="cancel-item">{{ reservation.reservationId }}</td>
+                <td rowspan="4" class="cancel"><a href="/{{ user_id }}/cancel/{{ reservation.reservationId }}" class="cancel-link">예매취소</a></td>
+            </tr>
+            <tr class="cancel-list">
+                <th class="cancel-item">영화 이름</th>
+                <td class="cancel-item">{{ reservation.movieId }}</td>        
+            </tr>
+            <tr class="cancel-list">
+                <th class="cancel-item">날짜/시간</th>
+                <td class="cancel-item">{{ reservation.screenId }}</td>
+            </tr>
+            <tr class="cancel-list">         
+                <th class="cancel-item">좌석 번호</th>
+                <td class="cancel-item">{{ reservation.seatId }}</td>
+            </tr>
+            <tr class="cancel-list">
+                <td colspan="3"></td>
+            </tr>
+        </table>
+    {% endfor %}
+{% endblock %}

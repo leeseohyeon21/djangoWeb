@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="ko_KR">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}베이스{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'movie/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/reservation.css' %}">
+</head>
+<body>
+    <div class="frame">
+        <div id="nav">
+            <ul class="nav-list">
+                {% if user.is_active %}
+                    <li class="nav-item"><a href="/" class="nav-link">홈</a></li>
+                    <li class="nav-item"><a href="/{{ user.username }}/reservation" class="nav-link">예매하기</a></li>
+                    <li class="nav-item"><a href="/{{ user.username }}/myhistory" class="nav-link">예매내역</a></li>
+                    <li class="nav-item"><a href="/{{ user.username }}/myhistory" class="nav-link">{{ user.username }}님</a></li>
+                    <li class="nav-item"><a href="/accounts/logout" class="nav-link">로그아웃</a></li>
+                {% else %}
+                    <li class="nav-item"><a href="/" class="nav-link">홈</a></li>
+                    <li class="nav-item"><a href="" class="nav-link" onclick="alert('로그인 후에 이용가능합니다.')">예매하기</a></li>
+                    <li class="nav-item"><a href="" class="nav-link" onclick="alert('로그인 후에 이용가능합니다.')">예매내역</a></li>
+                    <li class="nav-item"><a href="/accounts/login" class="nav-link">로그인</a></li>
+                    <li class="nav-item"><a href="/accounts/signup" class="nav-link">회원가입</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!-- //nav -->
+        <div class="content" name="content">
+            {% block content %}
+            base
+            {% endblock %}
+        </div>
+    </div>
+    <!-- //frame -->
+</body>
+</html>

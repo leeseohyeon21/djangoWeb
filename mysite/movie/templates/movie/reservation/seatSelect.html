@@ -1,0 +1,22 @@
+{% extends 'movie/index.html' %}
+
+{% block title %}예매하기{% endblock %}
+
+
+{% block content %}
+    <div class="process">
+        <span class="process">영화선택 > 날짜/시간 ></span> <strong>좌석선택</strong> <span class="process">> 예매완료</span>
+    </div>
+    <div class="movie">
+        {% for seat in seats %}
+            {% if seat.status == True %}
+                <a href="" class="seat-link" onclick="alert('이미 예약된 좌석입니다.')">{{ seat.seatCol }}{{ seat.seatRow }}</a>
+            {% else %}
+                <a href="/{{user_id}}/reservation/{{movie_id}}/{{screen_id}}/{{ seat.seatId }}" class="seat-link">{{ seat.seatCol }}{{ seat.seatRow }}</a>
+            {% endif %}
+            {% if seat.seatRow == 6 %}
+                <br><br><br>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

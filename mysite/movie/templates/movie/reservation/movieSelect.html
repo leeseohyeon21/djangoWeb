@@ -1,0 +1,19 @@
+{% extends 'movie/index.html' %}
+
+{% block title %}예매하기{% endblock %}
+
+
+{% block content %}
+    <div class="process">
+        <strong>영화선택</strong><span class="process"> > 날짜/시간 > 좌석선택 > 예매완료</span>
+    </div>
+    <div class="movie">
+        <ul class="movie-list">
+            {% for movie in movies %}
+                <li class="movie-item">
+                    <a href="/{{ user_id }}/reservation/{{movie.movieId}}" class="movie-link">{{movie.movieName}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'movie/index.html' %}
+
+{% block title %}예매하기{% endblock %}
+
+
+{% block content %}
+    <div class="process">
+        <span class="process">영화선택 ></span> <strong>날짜/시간</strong> <span class="process">> 좌석선택 > 예매완료</span>
+    </div>
+    <table class="movie">
+        {% for date in dates %}
+            <tr class="movie-list">
+                <th class="movie-item">{{ date }}</th>
+                    {% for screenTime in screenTimes %}
+                            {% if screenTime.screenDate == date %}
+                                <td class="movie-item"><a href="/{{ user_id }}/reservation/{{movie_id}}/{{screenTime.screenId}}" class="movie-link">{{ screenTime.screenTime }}</a></td>
+                            {% endif %}
+                    {% endfor %}
+                </th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

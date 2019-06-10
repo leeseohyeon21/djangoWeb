@@ -1,0 +1,16 @@
+{% extends 'movie/index.html' %}
+
+{% block title %}예매하기{% endblock %}
+
+
+{% block content %}
+    <div class="process">
+        <span class="process">영화선택 > 날짜/시간 > 좌석선택 ></span> <strong>예매완료</strong>
+    </div>
+    <div style="text-align: center; margin-bottom: 50px;">
+        예매가 완료되었습니다.<br><br><br>
+    </div>
+    <div class="movie-link" style="text-align: center;">
+        <a href="/{{ user_id }}/myhistory" class="cancel-link"><h3>예매 내역 보러가기</h3></a>
+    </div>
+{% endblock %}

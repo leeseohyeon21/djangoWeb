@@ -1,0 +1,66 @@
+div.process{
+    padding: 10px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+span.process{
+    color: #aaa; 
+    font-size: 13px;
+}
+.movie{
+    margin: 0 auto;
+    width: 100%;
+}
+.movie-list{
+    list-style: none;
+    padding: 30px 0;
+}
+.movie-item{
+   margin: 10px 0;
+   text-align: center;
+}
+.movie-link{
+   display: block;
+   text-decoration: none;
+   padding: 4px 10px;
+   color: rgb(0, 0, 0);
+}
+.movie-link:hover{
+   background: #aaa;
+   font-weight: bold;
+}
+.seat-link{
+    text-decoration: none;
+    background-image: url("/static/movie/img/seat.jpg");
+    padding: 4px 10px;
+    color: rgb(0, 0, 0);
+}
+.seat-link:hover{
+    font-weight: bold;
+}
+.cancel{
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+.cancel-list{
+    padding: 15px 10px;
+}
+.cancel-item{
+    text-align: left;
+    padding-right: 20px;
+}
+.cancel-link{
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+.cancel-link:hover{
+    background: #aaa;
+    padding: 10px 15px;
+    font-weight: bold;
+}

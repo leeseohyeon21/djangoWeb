@@ -1,0 +1,24 @@
+{% extends 'movie/base.html' %}
+
+{% block title %}로그인{% endblock %}
+
+
+{% block content %}
+    <h2 style="text-align: center;">로그인</h2>
+    <form method="POST" action="{% url 'signin'%}">
+    {% csrf_token %}
+        <table class="cancel" style="border: none;">
+            <tr class="cancel-list">
+                <td class="cancel-item">아이디</td>
+                <td class="cancel-item"><input name="username" type="text"></td>
+            </tr>
+            <tr class="cancel-list">
+                <td class="cancel-item">비밀번호</td>
+                <td class="cancel-item"><input name="password" type="password"></td>
+            </tr>
+            <tr class="cancel-list">
+                <td colspan="2"><input type="submit" value="로그인" style="text-align: center;"></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
